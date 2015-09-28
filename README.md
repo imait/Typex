@@ -1,7 +1,7 @@
 # Typex: typing exercise
 Typex, typing exercise is a programme with ajax like interface.
 
-Include a html with JavaScript file and JSON files.
+Include a html file with a JavaScript file and JSON files.
 
 ## Usage
 
