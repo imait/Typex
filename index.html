@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Typex: typing exercise</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="author" content="IMAI, Toshiyuki" />
+<style type="text/css">
+#OK {color: red; font-style: normal;}
+/*#CURRENTLINE {white-space: pre;}*/
+#NEXTLINE {color: silver; /*white-space: pre;*/}
+#TYPEFIELD {height: 1.5em; overflow: hidden;}
+
+body {  color: #000000; background-color: #FFFFFF}
+.lead {  text-align: center}
+.lead img {  float: none}
+/* .flang {  font-family: "Times", "Times New Roman", "serif"} */
+.data {  font-size: small; font-style: normal; font-weight: normal; text-align: left}
+.data address {  font-style: normal}
+.data address img {float: none; border: 0; padding: 0; margin: 0.5em 0 0 0;}
+.title {text-align: center}
+.attention {text-align: center}
+.addition {  text-align: right}
+.commercial { text-align: center }
+.introduction {font-weight: bold; margin: 1.5em 2em}
+.introduction p {margin: 0}
+</style>
+
+<script type="text/javascript">
+var ttitle = undefined;
+var ttext = undefined;
+var ttexts = new Array();
+var nexttask = undefined;
+var clno = 0;
+var errorcount = 0;
+var stime = undefined;
+var etime = undefined;
+var ptime = undefined;
+</script>
+<script type="text/javascript" src="./lib/typex.js"></script>
+</head>
+
+<body onload="getListMenu()">
+<h1>Typex: typing exercise</h1>
+<div id="TASKTEXT">
+<h2 id="TASKTITLE"></h2>
+<p id="CURRENTLINE"><em id="OK"></em><span id="LEFT"></span></p>
+<p id="NEXTLINE"></p>
+</div>
+<p><textarea onkeypress="sendKey(event)" id="TYPEFIELD"></textarea></p>
+<p><input type="submit" value="start" onclick="setup()" /></p>
+<p>
+<select id="LISTMENU" size="5" onchange="getTaskMenu()"></select>
+→
+<select id="TASKMENU" size="5" onchange="setTask()"></select>
+</p>
+<div id="NOTICE"><p id="NUM_ERRORS"></p></div>
+<table id="TIMETABLE">
+<caption>time record</caption>
+<tbody>
+<tr id="STIMER"><th>start time</th><td id="STIME">00:00:00<td></tr>
+<tr id="ETIMER"><th>finish time</th><td id="ETIME">00:00:00<td></tr>
+<tr id="PTIMER"><th>elapsed time</th><td id="PTIME">00:00:00<td></tr>
+</tbody>
+</table>
+</body>
+</html>
