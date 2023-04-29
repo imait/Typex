@@ -9,7 +9,7 @@ Open index.html on HTTP server.
 
 #### Demonstration
 
-* [Typex: typing exercise](http://www.kototone.jp/typex/index.html "Typex: typing exercise")
+* [Typex: typing exercise](http://imait.github.io/Typex/ "Typex: typing exercise")
 
 ## Author
 
